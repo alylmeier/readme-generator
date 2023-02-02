@@ -1,37 +1,37 @@
-# sdfsdf 
+# README Generator 
 
 ## Description
-sdfsdf
+This is a README Generating App
 
 ## Table of Contents
 [Installation](#installation)
 
 [Usage](#usage)
 
-[Contributing](#contributing)
+[Contributions](#contributions)
 
 [License](#license)
 
 ## Installation
-sdfsdf
+They can run the app in node
 
 ## Usage
-sdfsdf
+To help users generate high quality READMEs
 
 ## Contributions
-sdfsdf
+Me
 
 ## Tests
-sdfsdf
+None
 
-[![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Questions?
 
-Email me at sdfsdf
+Email me at alylmeier@gmail.com
 
 ## My Other GitHub Projects
-http://www.github.com/sdfsdf
+http://www.github.com/alylmeier
 
 
 

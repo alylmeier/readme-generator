@@ -53,7 +53,7 @@ ${data.description}
 
 [Usage](#usage)
 
-[Contributing](#contributing)
+[Contributions](#contributions)
 
 [License](#license)
 
