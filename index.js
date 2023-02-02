@@ -1,14 +1,3 @@
-// let title = process.argv[2];
-// let description = process.argv[3];
-// let tableOC = process.argv[4];
-// let installation = process.argv[5];
-// let usage = process.argv[6];
-// let license = process.argv[7];
-// let contribution = process.argv[8];
-// let test = process.argv[9];
-// let questions = process.argv[10];
-// let questions2 = process.argv[11];
-
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 const inquirer = require("inquirer");
@@ -68,7 +57,7 @@ function init() {
       writeToFile("./Output/README.md", data);
     });
 
-  // TODO: Create a function to write README file
+  //function to write README file
   function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) =>
       err ? console.log(err) : console.log("Your README has been generated!")
