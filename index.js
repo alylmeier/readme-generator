@@ -1,16 +1,16 @@
-let title = process.argv[2];
-let description = process.argv[3];
-let tableOC = process.argv[4];
-let installation = process.argv[5];
-let usage = process.argv[6];
-let license = process.argv[7];
-let contribution = process.argv[8];
-let test = process.argv[9];
-let questions = process.argv[10];
-let questions2 = process.argv[11];
+// let title = process.argv[2];
+// let description = process.argv[3];
+// let tableOC = process.argv[4];
+// let installation = process.argv[5];
+// let usage = process.argv[6];
+// let license = process.argv[7];
+// let contribution = process.argv[8];
+// let test = process.argv[9];
+// let questions = process.argv[10];
+// let questions2 = process.argv[11];
 
 const fs = require("fs");
-
+const generateMarkdown = require("./utils/generateMarkdown.js");
 const inquirer = require("inquirer");
 
 inquirer
@@ -21,53 +21,66 @@ inquirer
       name: "title",
     },
     {
-      type: "descriptor",
+      type: "input",
       message: "What is the description of your project?",
       name: "description",
     },
     {
-      type: "table",
+      type: "input",
       message: "Enter your Table of Contents :",
       name: "tableOC",
     },
     {
-      type: "descriptor",
-      message: "What is the description of your project?",
-      name: "description",
+      type: "input",
+      message: "How do users install your project?",
+      name: "installation",
     },
     {
-      type: "descriptor",
-      message: "What is the description of your project?",
-      name: "description",
+      type: "input",
+      message: "What is the intended use of your project?",
+      name: "usage",
     },
     {
-      type: "descriptor",
-      message: "What is the description of your project?",
-      name: "description",
+      type: "checkbox",
+      message: "What licenses does your project have?",
+      choices: ["Apache 2.0", "MIT", "Mozilla"],
+      name: "license",
     },
     {
-      type: "descriptor",
-      message: "What is the description of your project?",
-      name: "description",
+      type: "input",
+      message: "Who contributed to your project?",
+      name: "contributions",
     },
     {
-      type: "tests",
-      message: "What is the description of your project?",
-      name: "description",
+      type: "input",
+      message: "Please include any tests for your project:",
+      name: "tests",
     },
     {
-      type: "contact",
+      type: "input",
       message: "What is your contact email?",
       name: "email",
     },
     {
-      type: "ghuser",
+      type: "input",
       message: "What is your GitHub User Name?",
       name: "username",
     },
   ])
-  .then((response) =>
-    response.confirm === response.password
-      ? console.log("Success!")
-      : console.log("You forgot your password already?!")
+  .then((data) => {
+    console.log(data);
+    writeToFile("./Output/README.md", data);
+  });
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, generateMarkdown(data), (err) =>
+    err ? console.log(err) : console.log("Success!")
   );
+}
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
